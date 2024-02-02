@@ -1,0 +1,61 @@
+<div class="login-container">
+  <div class="form-container mat-elevation-z8">
+      <div class="form-header mat-elevation-z9">
+          <mat-toolbar color="warn" style="text-align: center;">Login</mat-toolbar>
+      </div>
+      <form class="form" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+          <mat-form-field class="f-w" >
+              <mat-label> Enter your email or phone number </mat-label>
+              <input matInput name="identifier" [(ngModel)]="data.identifier" #identifier="ngModel" required >
+              <mat-error>
+                <div *ngIf="!identifier.pristine && identifier.errors">Email or phone is required</div>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="f-w" >
+              <mat-label>Passwod</mat-label>
+              <input matInput name="password" [(ngModel)]="data.password" #password="ngModel" required >
+              <mat-error>
+                <div *ngIf="!password.pristine && password.errors">Password required</div>
+              </mat-error>
+            </mat-form-field>
+            <div style="text-align: start;">
+              Don't have an account?
+            </div>
+            <div class="f-w" style="display:flex;justify-content: space-between;">
+              <button [routerLink]="['/register']" mat-raised-button type="submit" style="background-color: white; color: black; width: 180px;">Register</button>
+              <button  mat-raised-button type="submit" style="background-color: white; color: black; width: 180px;">Login</button>
+            </div>
+            <div style="text-align: center; margin: 20px auto; ">
+              ________ or Login using another way ________
+
+            </div>              
+            <div id="google-btn" style="display: flex; justify-content: center; margin: 20px;"></div>
+
+
+                        <!-- <div id="g_id_onload"
+                data-client_id="647134436725-766v9rtb070ke3m99q7m3ani8mh55s7o.apps.googleusercontent.com"
+                data-context="signin"
+                data-ux_mode="redirect"
+                data-login_uri="http://localhost:4200//home"
+                data-nonce=""
+                data-auto_prompt="false">
+            </div>
+
+            <div style="display: flex; justify-content: center; margin-bottom: 20px;" 
+                class="g_id_signin"
+                data-type="standard"
+                data-shape="outline"
+                data-theme="outline"
+                data-text="signin_with"
+                data-size="large"
+                data-logo_alignment="left"
+                data-width="400px">
+            </div> -->
+
+
+
+             <!-- <button [routerLink]="['/google-login']" mat-raised-button type="submit" style="background-color: rgb(79, 79, 79); color: rgb(255, 255, 255); width: 370px; ">Continue with Facebook</button> -->
+      </form>
+  </div> 
+</div>
+
